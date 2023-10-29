@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="{{asset('css/sb-admin-2.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/sb-admin-2.min.css')}}">
+
+    <h1>Employe index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Matricule</th>
+                <th>Motdepasse</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Mail</th>
+                <th>Telephone</th>
+                <th>Adresse</th>
+                <th>Position</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for employe in employes %}
+            <tr>
+                <td>{{ employe.id }}</td>
+                <td>{{ employe.matricule }}</td>
+                <td>{{ employe.motdepasse }}</td>
+                <td>{{ employe.nom }}</td>
+                <td>{{ employe.prenom }}</td>
+                <td>{{ employe.mail }}</td>
+                <td>{{ employe.telephone }}</td>
+                <td>{{ employe.adresse }}</td>
+                <td>{{ employe.position }}</td>
+                <td>
+                    <a href="{{ path('app_employe_show', {'id': employe.id}) }}">show</a>
+                    <a href="{{ path('app_employe_edit', {'id': employe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{%block footer %}
+    <a href="{{ path('app_employe_new') }}">Create new</a>
+    {% endblock %}
+    {%  block js %} 
+    {% endblock %}
+{% endblock %}

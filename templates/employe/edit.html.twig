@@ -1,0 +1,16 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Edit Employe{% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="{{asset('css/sb-admin-2.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/sb-admin-2.min.css')}}">
+    <h1>Edit Employe</h1>
+
+    {{ include('employe/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_employe_index') }}">back to list</a>
+
+    {{ include('employe/_delete_form.html.twig') }}
+{% endblock %}

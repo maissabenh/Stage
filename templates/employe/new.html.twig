@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Employe{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/sb-admin-2.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/sb-admin-2.min.css')}}">
+    <h1>Create new Employe</h1>
+
+    {{ include('employe/_form.html.twig') }}
+
+    <a href="{{ path('app_employe_index') }}">back to list</a>
+{% endblock %}
